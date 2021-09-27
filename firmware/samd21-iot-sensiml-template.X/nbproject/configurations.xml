@@ -404,6 +404,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+          <linkerLibFileItem>../knowledgepack/sensiml/lib/libsensiml.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>

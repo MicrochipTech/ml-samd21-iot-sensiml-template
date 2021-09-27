@@ -51,7 +51,6 @@ To integrate the knowledge pack into this template project:
    | Recursively add header files (.h) under the `knowledgepack` folder |
 7. Back in the *Add Files* window, click the *Add* button to finish adding the necessary header files and close the dialog.
 8. Right click the *Source Files* folder in the *Projects* pane and select *Add Existing Items from Folders* from the menu. Repeat steps 5-7 to add all source files (.c files) from the `knowledgepack` folder.
-9. *IF* you're deploying a *Library* format Knowledge Pack: Right click the *Libraries* folder in the *Projects* pane, click *Add Library/Object File*, then add the object file located at `firmware/knowledgepack/libsensiml/libsensiml.a`.
 
 Your Knowledge Pack is now integrated into your MPLAB X project. You should be able to compile your project and flash it onto the SAMD21.
 
