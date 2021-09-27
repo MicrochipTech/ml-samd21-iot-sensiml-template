@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p><img src="assets/microchip.png" alt="https://www.microchip.com/"></p>
+<h1 id="template-mplab-x-project-for-sensiml">Template MPLAB X Project for SensiML</h1>
+<h2 id="contents">Contents</h2>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#knowledge-pack-deployment">Knowledge Pack Deployment</a></li>
+<li><a href="#knowledge-pack-integration">Knowledge Pack Integration</a></li>
+<li><a href="#firmware-operation">Firmware Operation</a></li>
+<li><a href="#visualization-with-sensiml-open-gateway">Visualization with SensiML Open Gateway</a></li>
+</ol>
+<h1 id="overview">Overview</h1>
+<p>This repository contains an MPLAB X project that can be used as a starting point for running any SensiML Knowledge Pack on the SAMD21 Machine Learning Evaluation Kit (<a href="https://www.microchip.com/developmenttools/ProductDetails/EV45Y33A">BMI160</a> or <a href="https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV18H79A">ICM42688</a> variant). Read on for instructions on how to go from a SensiML Knowledge Pack deployment to a full working MPLAB X project.</p>
+<h2 id="hardware-used">Hardware Used</h2>
+<ul>
+<li>SAMD21 Machine Learning Evaluation Kit with Bosch BMI160 IMU (<a href="https://www.microchip.com/developmenttools/ProductDetails/EV45Y33A">EV45Y33A</a>)</li>
+<li>SAMD21 Machine Learning Evaluation Kit with TDK ICM42688 IMU (<a href="https://www.microchip.com/developmenttools/ProductDetails/EV18H79A">EV18H79A</a>)</li>
+</ul>
+<h2 id="software-used">Software Used</h2>
+<ul>
+<li>MPLAB® X IDE (https://microchip.com/mplab/mplab-x-ide)</li>
+<li>MPLAB® XC32 compiler (https://microchip.com/mplab/compilers)</li>
+<li>MPLAB® Harmony 3 (https://www.microchip.com/harmony)</li>
+<li>SensiML Analytics Toolkit (https://sensiml.com/download/)</li>
+</ul>
+<h2 id="related-documentation">Related Documentation</h2>
+<ul>
+<li>ATSAMD21G18 <a href="https://www.microchip.com/wwwproducts/en/ATSAMD21G18">Product Family Page</a></li>
+<li>SAM-IoT WG Development Board <a href="https://www.microchip.com/developmenttools/ProductDetails/EV75S95A">Product Details</a></li>
+</ul>
+<h1 id="knowledge-pack-deployment">Knowledge Pack Deployment</h1>
+<p>To deploy a knowledge pack for the SAMD21 ML Eval Kit:</p>
+<ol>
+<li>Open up your SensiML project in the <a href="https://app.sensiml.cloud/">Analytics Studio</a> and navigate to the <em>Download Model</em> tab.</li>
+<li>Select <code>Microchip SAMD21 ML Eval Kit</code> from the <em>HW Platform</em> options.</li>
+<li>Select either <em>Library</em> or <em>Source</em> from the <em>Format</em> options. <em>Note: source format is only available for upper tier customers</em>.</li>
+<li>Select the appropriate sensor configuration for your project from the <em>Data Source</em> options. Note that this configuration should match the one you used to capture the data your model was trained with.</li>
+<li>Click the <em>Download</em> button to download the model.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="assets/deployment.jpeg" alt="https://www.microchip.com/"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Deployment from the Analytics Studio</td>
+</tr>
+</tbody>
+</table>
+<h1 id="knowledge-pack-integration">Knowledge Pack Integration</h1>
+<h2 id="binary-format">Binary Format</h2>
+<p>If you deployed a knowledge pack in the <em>Binary</em> format, the archive should contain the binary file which can be written directly to the SAMD21.</p>
+<h2 id="library-format">Library Format</h2>
+<p>If you deployed a knowledge pack in the <em>Library</em> format, the archive should contain a complete, ready to compile, MPLAB X project. Follow the steps below to compile your project:</p>
+<ol>
+<li>In MPLAB X, open up the .X project folder under the <code>firmware</code> folder of the knowledge pack</li>
+<li>Select the <em>Project Configuration</em> option in the MPLAB X toolbar according to which sensor you're using.
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="assets/project-configuration.png" alt="https://www.microchip.com/"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Set the Project Configuration according to sensor</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>Your project should now be ready to compile.</p>
+<h2 id="source-format">Source Format</h2>
+<p>If you deployed a knowledge pack in the <em>Source</em> format there are a few manual steps to add the required sensiml files to the MPLAB X project:</p>
+<ol>
+<li>In MPLAB X, open up the .X project folder under the <code>firmware</code> folder of this repository.</li>
+<li>Select the <em>Project Configuration</em> option in the MPLAB X toolbar according to which sensor you're using.
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="assets/project-configuration.png" alt="https://www.microchip.com/"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Set the Project Configuration according to sensor</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>In the <em>Projects</em> pane, right click the <em>Header Files</em> folder under the template project and select <em>Add Existing Items from Folders</em> from the options.
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="assets/add_header_files_1.png" alt="https://www.microchip.com/"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Adding knowledge pack header files to your project</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>In the resulting window that opens, click the <em>Add Folder</em> button.</li>
+<li>In the new dialog, select <em>Header Files</em> from the <em>Files of Type</em> dropdown, then navigate to the template project's <code>firmware</code> directory and select the <code>knowledgepack</code> directory. Click the <em>Select</em> button to add the directory.
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="assets/add_header_files_2.png" alt="https://www.microchip.com/"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Recursively add header files (.h) under the <code>knowledgepack</code> folder</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>Back in the <em>Add Files</em> window, click the <em>Add</em> button to finish adding the necessary header files and close the dialog.</li>
+<li>Right click the <em>Source Files</em> folder in the <em>Projects</em> pane and select <em>Add Existing Items from Folders</em> from the menu. Repeat steps 5-7 to add all source files (.c files) from the <code>knowledgepack</code> folder.</li>
+</ol>
+<p>Your Knowledge Pack is now integrated into your MPLAB X project. You should be able to compile your project and flash it onto the SAMD21.</p>
+<h1 id="firmware-operation">Firmware Operation</h1>
+<p>The firmware behavior can be summarized as operating in one of three distinct states as reflected by the onboard LEDs and described in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>LED Behavior</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Error</td>
+<td>Red (ERROR) LED lit</td>
+<td>Fatal error. (Do you have the correct sensor plugged in?).</td>
+</tr>
+<tr>
+<td>Buffer Overflow</td>
+<td>Yellow (DATA) and Red (ERROR) LED lit for 5 seconds</td>
+<td>Processing is not able to keep up with real-time; data buffer has been reset.</td>
+</tr>
+<tr>
+<td>Running</td>
+<td>Yellow (DATA) LED flashing slowly</td>
+<td>Firmware is running normally.</td>
+</tr>
+</tbody>
+</table>
+<p>When operating normally, the firmware prints the classification prediction (classification ID number) and the generated feature vector for each sample window over the UART port. To read the UART port use a terminal emulator of your choice (e.g., MPLAB Data Visualizer's integrated terminal tool) with the following settings:</p>
+<ul>
+<li>Baudrate 115200</li>
+<li>Data bits 8</li>
+<li>Stop bits 1</li>
+<li>Parity None</li>
+</ul>
+<p>A sample of the terminal output is shown in the figure below.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="assets/terminal-output.png" alt="Terminal output"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">UART Terminal Output</td>
+</tr>
+</tbody>
+</table>
+<h1 id="visualization-with-sensiml-open-gateway">Visualization with SensiML Open Gateway</h1>
+<p>In addition to reading the text output of the firmware with a terminal emulator, the output may be visualized with the SensiML <a href="https://github.com/sensiml/open-gateway">Open Gateway application</a>. Follow the below instructions to get started:</p>
+<ol>
+<li>Open a terminal and change to the directory where you've checked out this repository.</li>
+<li>Clone the open-gateway repository and install the dependencies:
+<blockquote>
+<p><code>git clone https://github.com/sensiml/open-gateway</code><br>
+<code>pip install -r open-gateway/requirements.txt</code></p>
+</blockquote>
+</li>
+<li>Change the baudrate (<code>BAUD_RATE</code> variable) in <code>open-gateway/config.py</code> to 115200</li>
+<li>Change to the open-gateway directory and run the open-gateway application, passing in the knowledge pack model.json description file:
+<blockquote>
+<p><code>cd open-gateway</code><br>
+<code>python app.py -m firmware/knowledgepack/libsensiml/model.json</code></p>
+</blockquote>
+</li>
+<li>Connect to the SAMD21 board in the gateway application:
+<ul>
+<li>Select the <code>Recognition</code> device mode.</li>
+<li>Select <code>Serial</code> connection type, and enter the UART address (e.g. COM4) in the <code>Device ID</code> field.</li>
+<li>Click <code>Connect To Device</code>.</li>
+</ul>
+</li>
+<li>Switch to the <code>Test Mode</code> tab and click <code>Start Stream</code>.</li>
+</ol>
+
+</body>
+</html>
