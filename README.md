@@ -1,11 +1,17 @@
 ![https://www.microchip.com/](assets/microchip.png)
 # Template MPLAB X Project for SensiML
-## Contents
-1. [Overview](#overview)
-1. [Knowledge Pack Deployment](#knowledge-pack-deployment)
-2. [Knowledge Pack Integration](#knowledge-pack-integration)
-3. [Firmware Operation](#firmware-operation)
-4. [Visualization with SensiML Open Gateway](#visualization-with-sensiml-open-gateway)
+
+# Contents
+* [Overview](#overview)
+* [Knowledge Pack Deployment](#knowledge-pack-deployment)
+* [Knowledge Pack Integration](#knowledge-pack-integration)
+  * [Binary Format](#binary-format)
+  * [Library Format](#library-format)
+  * [Source Format](#source-format)
+* [Firmware Operation](#firmware-operation)
+* [Visualization with SensiML Open Gateway](#visualization-with-sensiml-open-gateway)
+
+<div style="page-break-after: always;"></div>
 
 # Overview
 This repository contains an MPLAB X project that can be used as a starting point for running any SensiML Knowledge Pack on the SAMD21 Machine Learning Evaluation Kit ([BMI160](https://www.microchip.com/developmenttools/ProductDetails/EV45Y33A) or [ICM42688](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV18H79A) variant). Read on for instructions on how to go from a SensiML Knowledge Pack deployment to a full working MPLAB X project.
@@ -24,6 +30,8 @@ This repository contains an MPLAB X project that can be used as a starting point
 * ATSAMD21G18 [Product Family Page](https://www.microchip.com/wwwproducts/en/ATSAMD21G18)
 * SAM-IoT WG Development Board [Product Details](https://www.microchip.com/developmenttools/ProductDetails/EV75S95A)
 
+<div style="page-break-after: always;"></div>
+
 # Knowledge Pack Deployment
 To deploy a knowledge pack for the SAMD21 ML Eval Kit:
 
@@ -36,6 +44,8 @@ To deploy a knowledge pack for the SAMD21 ML Eval Kit:
 | ![https://www.microchip.com/](assets/deployment.jpeg) |
 | :--: |
 | Deployment from the Analytics Studio |
+
+<div style="page-break-after: always;"></div>
 
 # Knowledge Pack Integration
 ## Binary Format
@@ -74,6 +84,8 @@ If you deployed a knowledge pack in the *Source* format there are a few manual s
 
 Your Knowledge Pack is now integrated into your MPLAB X project. You should be able to compile your project and flash it onto the SAMD21.
 
+<div style="page-break-after: always;"></div>
+
 # Firmware Operation
 The firmware behavior can be summarized as operating in one of three distinct states as reflected by the onboard LEDs and described in the table below:
 
@@ -96,8 +108,9 @@ A sample of the terminal output is shown in the figure below.
 | :--: |
 | UART Terminal Output |
 
-# Visualization with SensiML Open Gateway
+<div style="page-break-after: always;"></div>
 
+# Visualization with SensiML Open Gateway
 In addition to reading the text output of the firmware with a terminal emulator, the output may be visualized with the SensiML [Open Gateway application](https://github.com/sensiml/open-gateway). Follow the below instructions to get started:
 
 1. Open a terminal and change to the directory where you've checked out this repository.
@@ -107,7 +120,7 @@ In addition to reading the text output of the firmware with a terminal emulator,
 2. Change the baudrate (`BAUD_RATE` variable) in `open-gateway/config.py` to 115200
 3. Change to the open-gateway directory and run the open-gateway application, passing in the knowledge pack model.json description file:
    > `cd open-gateway`\
-   > `python app.py -m firmware/knowledgepack/libsensiml/model.json`
+   > `python app.py -m ../firmware/knowledgepack/sensiml/model.json`
 4. Connect to the SAMD21 board in the gateway application:
    * Select the `Recognition` device mode.
    * Select `Serial` connection type, and enter the UART address (e.g. COM4) in the `Device ID` field.
