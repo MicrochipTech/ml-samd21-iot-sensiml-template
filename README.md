@@ -37,7 +37,7 @@ To deploy a knowledge pack for the SAMD21 ML Eval Kit:
 
 1. Open up your SensiML project in the [Analytics Studio](https://app.sensiml.cloud/) and navigate to the *Download Model* tab.
 2. Select `Microchip SAMD21 ML Eval Kit` from the *HW Platform* options.
-3. Select either *Library* or *Source* from the *Format* options. *Note: source format is only available for upper tier customers*.
+3. Select one of *Binary*, *Library* or *Source* from the *Format* options. *Note: source format is only available for upper tier customers*.
 4. Select the appropriate sensor configuration for your project from the *Data Source* options. Note that this configuration should match the one you used to capture the data your model was trained with.
 5. Click the *Download* button to download the model.
 
@@ -80,7 +80,7 @@ If you deployed a knowledge pack in the *Source* format there are a few manual s
    | :--: |
    | Recursively add header files (.h) under the `knowledgepack` folder |
 6. Back in the *Add Files* window, click the *Add* button to finish adding the necessary header files and close the dialog.
-7. Right click the *Source Files* folder in the *Projects* pane and select *Add Existing Items from Folders* from the menu. Repeat steps 5-7 to add all source files (.c files) from the `knowledgepack` folder.
+7. Right click the *Source Files* folder in the *Projects* pane and select *Add Existing Items from Folders* from the menu. Repeat steps 4-6 to add all source files (.c files) from the `knowledgepack` folder.
 
 Your Knowledge Pack is now integrated into your MPLAB X project. You should be able to compile your project and flash it onto the SAMD21.
 
