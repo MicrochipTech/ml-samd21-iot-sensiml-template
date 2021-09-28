@@ -372,7 +372,6 @@
       <itemPath>../src/config/SAMD21_IOT_WG_BMI160/SAMD21_IOT_WG_BMI160.mhc</itemPath>
       <itemPath>../src/config/SAMD21_IOT_WG_ICM42688/SAMD21_IOT_WG_ICM42688.mhc</itemPath>
       <itemPath>../src/config/SAMD21_IOT_WG_ICM42688/harmony-manifest-success.yml</itemPath>
-      <itemPath>../knowledgepack/libsensiml/model.json</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -404,7 +403,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
-          <linkerLibFileItem>../knowledgepack/sensiml/lib/libsensiml.a</linkerLibFileItem>
+            <linkerLibFileItem>../knowledgepack/sensiml/lib/libsensiml.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
