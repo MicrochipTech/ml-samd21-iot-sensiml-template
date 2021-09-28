@@ -16,6 +16,10 @@
 # Overview
 This repository contains an MPLAB X project that can be used as a starting point for running any SensiML Knowledge Pack on the SAMD21 Machine Learning Evaluation Kit ([BMI160](https://www.microchip.com/developmenttools/ProductDetails/EV45Y33A) or [ICM42688](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV18H79A) variant). Read on for instructions on how to go from a SensiML Knowledge Pack deployment to a full working MPLAB X project.
 
+| ![ml eval kits](assets/mlkits.png) |
+| :--: |
+| *Microchip SAMD21 Machine Learning Evaluation Kits* |
+
 ## Hardware Used
 * SAMD21 Machine Learning Evaluation Kit with Bosch BMI160 IMU ([EV45Y33A](https://www.microchip.com/developmenttools/ProductDetails/EV45Y33A))
 * SAMD21 Machine Learning Evaluation Kit with TDK ICM42688 IMU ([EV18H79A](https://www.microchip.com/developmenttools/ProductDetails/EV18H79A))
