@@ -46,8 +46,6 @@
 // *****************************************************************************
 // *****************************************************************************
 
-static uint8_t led_mask = 0;
-
 /* Must be large enough to hold the connect/disconnect strings from SensiML DCL */
 #define UART_RXBUF_LEN  128
 static uint8_t _uartRxBuffer_data[UART_RXBUF_LEN];
@@ -84,16 +82,6 @@ static size_t __attribute__(( unused )) UART_Write(uint8_t *ptr, const size_t nb
 // Section: Generic stub definitions
 // *****************************************************************************
 // *****************************************************************************
-static void led_toggle(uint8_t led_mask) {
-    if (led_mask & 1) LED_BLUE_Toggle();
-    if (led_mask & 2) LED_GREEN_Toggle();
-    if (led_mask & 4) LED_YELLOW_Toggle();
-    if (led_mask & 8) LED_RED_Toggle();
-}
-
-#undef LED_STATUS_Toggle
-#define LED_STATUS_Toggle() led_toggle(led_mask)
-
 static void Null_Handler() {
     // Do nothing
 }
