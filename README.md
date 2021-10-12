@@ -112,6 +112,8 @@ A sample of the terminal output is shown in the figure below.
 | :--: |
 | UART Terminal Output |
 
+Note that by default the feature vector will not be output. You can enable this behavior by setting `write_features=1` in `sml_output.c`.
+
 <div style="page-break-after: always;"></div>
 
 # Visualization with SensiML Open Gateway
@@ -124,7 +126,7 @@ In addition to reading the text output of the firmware with a terminal emulator,
 2. Change the baudrate (`BAUD_RATE` variable) in `open-gateway/config.py` to 115200
 3. Change to the open-gateway directory and run the open-gateway application, passing in the knowledge pack model.json description file:
    > `cd open-gateway`\
-   > `python app.py -m ../firmware/knowledgepack/sensiml/model.json`
+   > `python app.py -m $(find ../firmware/knowledgepack/ -name model.json)`
 4. Connect to the SAMD21 board in the gateway application:
    * Select the `Recognition` device mode.
    * Select `Serial` connection type, and enter the UART address (e.g. COM4) in the `Device ID` field.
