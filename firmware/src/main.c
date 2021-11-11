@@ -73,7 +73,7 @@ void SERCOM5_Handler() {
     }
 }
 
-static size_t __attribute__(( unused )) UART_Write(uint8_t *ptr, const size_t nbytes) {
+size_t __attribute__(( unused )) UART_Write(uint8_t *ptr, const size_t nbytes) {
     return SERCOM5_USART_Write(ptr, nbytes) ? nbytes : 0;
 }
 
@@ -86,7 +86,7 @@ static void Null_Handler() {
     // Do nothing
 }
 
-static size_t __attribute__(( unused )) UART_Read(uint8_t *ptr, const size_t nbytes) {
+size_t __attribute__(( unused )) UART_Read(uint8_t *ptr, const size_t nbytes) {
     return ringbuffer_read(&uartRxBuffer, ptr, nbytes);
 }
 
@@ -184,12 +184,12 @@ int main ( void )
         printf("sensor type is %s\n", SNSR_NAME);
         printf("sensor sample rate set at %dHz\n", SNSR_SAMPLE_RATE);
 #if SNSR_USE_ACCEL
-        printf("accelerometer axes %s%s%s enabled with range set at +/-%dGs\n", SNSR_USE_ACCEL_X ? "x" : "", SNSR_USE_ACCEL_Y ? "y" : "", SNSR_USE_ACCEL_Z ? "z" : "", SNSR_ACCEL_RANGE);
+        printf("accelerometer axes enabled with range set at +/-%dGs\n", SNSR_ACCEL_RANGE);
 #else
         printf("accelerometer disabled\n");
 #endif
 #if SNSR_USE_GYRO
-        printf("gyrometer axes %s%s%s enabled with range set at %dDPS\n", SNSR_USE_GYRO_X ? "x" : "", SNSR_USE_GYRO_Y ? "y" : "", SNSR_USE_GYRO_Z ? "z" : "", SNSR_GYRO_RANGE);
+        printf("gyrometer axes enabled with range set at %dDPS\n", SNSR_GYRO_RANGE);
 #else
         printf("gyrometer disabled\n");
 #endif
